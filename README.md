@@ -50,3 +50,79 @@ The goal of this project was to design and operate a centralized monitoring envi
              │ Linux Hosts │             │   Network   │
              │             │             │   Devices   │
              └─────────────┘             └─────────────┘
+```
+## Monitoring
+
+The environment was designed to monitor:
+
+- Host availability
+- CPU utilization
+- Memory usage
+- Disk usage
+- Network interfaces
+- Service availability
+- Network device status
+- SNMP metrics
+- Infrastructure health
+
+## Security
+
+Security considerations included:
+
+- HTTPS/TLS for web access
+- Firewall rules limiting exposed services
+- Restricted management access
+- SNMP access control
+- Least-privilege considerations
+- Fail2ban for exposed authentication services
+- Separation between monitoring and monitored systems
+
+## Troubleshooting
+
+Some of the issues explored during implementation included:
+
+- SNMP timeouts
+- SNMP authorization errors
+- Firewall connectivity
+- Zabbix Agent communication
+- Incorrect SNMP credentials
+- Network reachability
+- Host availability problems
+
+More detailed troubleshooting documentation will be available in the `docs/` directory.
+
+## Repository Structure
+
+```text
+.
+├── README.md
+├── docs/
+│   ├── architecture.md
+│   ├── security.md
+│   └── troubleshooting.md
+├── diagrams/
+├── examples/
+│   ├── agent/
+│   └── snmp/
+└── scripts/
+
+```
+## Disclaimer
+
+This repository contains a sanitized reconstruction created for educational and portfolio purposes.
+
+No confidential company information, production credentials, customer data or internal network information is included.
+
+## Documentation Plan
+
+This repository will be expanded with additional technical documentation and sanitized examples, including:
+
+docs/architecture.md
+docs/security.md
+docs/troubleshooting.md
+examples/snmp/
+examples/agent/
+
+Only technologies, configurations and security measures that were actually implemented, tested or evaluated will be documented.
+
+Planned or proposed improvements will be clearly identified as such rather than presented as completed implementations.
