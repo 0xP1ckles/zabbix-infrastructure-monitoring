@@ -74,7 +74,7 @@ Security considerations included:
 - Restricted management access
 - SNMP access control
 - Least-privilege considerations
-- Fail2ban for exposed authentication services
+- Evaluation and use of Fail2ban to reduce brute-force exposure on authentication services
 - Separation between monitoring and monitored systems
 
 ## Troubleshooting
