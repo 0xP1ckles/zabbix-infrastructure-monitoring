@@ -22,10 +22,11 @@ The goal of this project was to design and operate a centralized monitoring envi
 ## Technologies
 
 - Zabbix
-- Linux
-- SNMP
 - Grafana
-- MySQL / MariaDB
+- Linux
+- PostgreSQL
+- MariaDB
+- SNMP
 - Nginx
 - UFW
 - Fail2ban
@@ -36,22 +37,21 @@ The goal of this project was to design and operate a centralized monitoring envi
 ```text
                          ┌──────────────────┐
                          │      Grafana     │
-                         │   Visualization  │
-                         └────────┬─────────┘
-                                  │
-                         ┌────────▼─────────┐
-                         │      Zabbix      │
-                         │      Server      │
-                         └───────┬─┬────────┘
-                                 │ │
-                    Zabbix Agent │ │ SNMP
-                                 │ │
-                    ┌────────────┘ └─────────────┐
-                    │                            │
-             ┌──────▼──────┐             ┌──────▼──────┐
-             │ Linux Hosts │             │   Network   │
-             │             │             │   Devices   │
-             └─────────────┘             └─────────────┘
+                         │  Visualization   │
+                         └───────┬──────────┘
+                                 │
+                  ┌──────────────┴──────────────┐
+                  │                             │
+         ┌────────▼────────┐          ┌────────▼────────┐
+         │     Zabbix      │          │     MariaDB     │
+         │     Server      │          │ Operational /   │
+         │                 │          │ Telemetry Data  │
+         └────────┬────────┘          └────────▲────────┘
+                  │                             │
+         ┌────────▼────────┐             Data ingestion
+         │   PostgreSQL    │                    │
+         │ Zabbix Backend  │          External systems /
+         └─────────────────┘                devices
 ```
 ## Monitoring
 
@@ -78,6 +78,11 @@ Security considerations included:
 - Least-privilege considerations
 - Evaluation and use of Fail2ban to reduce brute-force exposure on authentication services
 - Separation between monitoring and monitored systems
+
+## Data Storage
+
+- **PostgreSQL** — used as the Zabbix backend database.
+- **MariaDB** — used to store operational and telemetry data collected from external systems and devices.
 
 ## Troubleshooting
 
