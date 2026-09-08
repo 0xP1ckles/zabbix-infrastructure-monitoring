@@ -2,9 +2,9 @@
 
 Infrastructure monitoring project built around **Zabbix**, **SNMP**, **Linux** and **Grafana**.
 
- > Work in progress — documentation and sanitized examples are being added progressively.
+> Work in progress — documentation and sanitized examples are being added progressively.
 
-The goal of this project was to design and operate a centralized monitoring environment capable of providing visibility into servers, network equipment and infrastructure health while applying basic security and access-control principles.
+The goal of this project was to design and operate a centralized monitoring environment capable of providing visibility into servers, network equipment and infrastructure health while applying security and access-control principles.
 
 > This repository is a sanitized reconstruction of a real-world environment.  
 > All IP addresses, hostnames, credentials and infrastructure details are fictional or anonymized.
